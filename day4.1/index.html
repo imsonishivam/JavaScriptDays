@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ramdom Password Generator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="display-password">Generate Now</div>
+      <div class="password-options">
+        <div>
+          <label for="length">Password Length</label>
+          <input type="text" name="" id="length" />
+        </div>
+        <div>
+          <label for="uppercase">Contains Uppercase</label>
+          <input type="checkbox" name="" id="uppercase" />
+        </div>
+        <div>
+          <label for="lowercase">Contains Lowercase</label>
+          <input type="checkbox" name="" id="lowercase" />
+        </div>
+        <div>
+          <label for="numbers">Contains Number</label>
+          <input type="checkbox" name="" id="numbers" />
+        </div>
+        <div>
+          <label for="symbols">Contains Symbol</label>
+          <input type="checkbox" name="" id="symbols" />
+        </div>
+        <button onclick="password()">Generate</button>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
