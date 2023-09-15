@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>"income - expense Traker"</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="total-amount">
+          <span>TOTAL AMOUNT - </span>
+          <span class="t-amount">₹ 94572</span>
+        </div>
+        <div class="two-ways">
+          <div class="expense-amount">
+            <span>Expense AMOUNT - </span>
+            <span class="e-amount">₹ 9457</span>
+          </div>
+          <div class="income-amount">
+            <span>Income AMOUNT - </span>
+            <span class="i-amount">₹ 34572</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="add-items">
+        <h2>Add Expense & Income</h2>
+        <input
+          type="text"
+          name=""
+          id="item-name"
+          placeholder="electricity bill..."
+        />
+        <input type="text" name="" id="item-price" placeholder="amount..." />
+        <div>
+          <label for="ways">Choose the way</label>
+          <select name="ways" id="ways" placeholder="Choose your type">
+            <option value="expense">expense</option>
+            <option value="income">income</option>
+          </select>
+        </div>
+        <button onclick="addItem()">ADD</button>
+      </div>
+      <div class="show"></div>
+      <!-- <div class="list">
+        <span>laptop</span>
+        <span>10342</span>
+        <span>expense</span>
+        <button>Delete</button>
+      </div> -->
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
