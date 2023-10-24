@@ -1,0 +1,159 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.chrome_tab_container {
+  height: 40px;
+  width: 100%;
+  background: #000000;
+  color: white;
+  display: flex;
+}
+
+.chrome_tab_list {
+  height: 100%;
+  padding-left: 10px;
+  overflow-x: unset !important;
+  overflow-y: unset !important;
+  max-width: unset;
+  position: relative;
+  display: flex;
+  white-space: nowrap;
+  flex-grow: 1;
+}
+
+.chrome_tab {
+  height: 100%;
+  display: inline-block;
+}
+
+.chrome_tab .inner {
+  height: 100%;
+  transition: all 0.3s ease;
+  border-radius: 10px 10px 0 0;
+  padding: 7px 10px 5px 10px;
+  position: relative;
+  max-width: 200px;
+  display: flex;
+  padding-right: 30px;
+}
+.chrome_tab {
+  margin-left: -1px;
+}
+
+.chrome_tab:not(.active_tab) .border_right,
+.chrome_tab:not(.active_tab) .border_left {
+  opacity: 1;
+  height: 20px;
+  width: 1px;
+  background: #ffffff;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  transition: all 0.3s ease;
+}
+.chrome_tab:not(.active_tab) .border_right {
+  right: 0;
+}
+.chrome_tab:not(.active_tab) .border_left {
+  left: 0;
+}
+.chrome_tab:first-child .border_left {
+  opacity: 0;
+}
+
+.chrome_tab:not(.active_tab):hover .border_right,
+.chrome_tab:not(.active_tab):hover .border_left {
+  opacity: 0;
+}
+
+.chrome_tab:not(.active_tab):hover .inner {
+  background: #eee;
+  color: #000000;
+  z-index: 50;
+}
+
+.chrome_tab:not(.active_tab):hover .inner::before {
+  background: -webkit-radial-gradient(
+    0 0,
+    circle,
+    rgba(204, 0, 0, 0) 10px,
+    #eee 11px
+  );
+}
+.chrome_tab:not(.active_tab):hover .inner::after {
+  background: -webkit-radial-gradient(
+    100% 0,
+    circle,
+    rgba(204, 0, 0, 0) 10px,
+    #eee 11px
+  );
+}
+.chrome_tab .inner::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  left: -10px;
+  bottom: 0;
+  background: -webkit-radial-gradient(
+    0 0,
+    circle,
+    rgba(204, 0, 0, 0) 20px,
+    #e1e1e1 11px
+  );
+}
+.chrome_tab .inner::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  right: -10px;
+  bottom: 0;
+  background: -webkit-radial-gradient(
+    100% 0,
+    circle,
+    rgba(204, 0, 0, 0) 20px,
+    #e1e1e1 11px
+  );
+}
+
+.chrome_tab.active_tab .inner {
+  background: #fff;
+  color: black;
+  z-index: 100;
+}
+.chrome_tab.active_tab .inner::before {
+  background: -webkit-radial-gradient(
+    0 0,
+    circle,
+    rgba(204, 0, 0, 0) 10px,
+    #fff 11px
+  );
+}
+.chrome_tab.active_tab .inner::after {
+  background: -webkit-radial-gradient(
+    100% 0,
+    circle,
+    rgba(204, 0, 0, 0) 10px,
+    #fff 11px
+  );
+}
+
+.chrome_tab .icon,
+.chrome_tab .text {
+  display: inline-block;
+  pointer-events: none;
+}
+.chrome_tab .icon {
+  margin-right: 5px;
+  color: #444;
+}
+.chrome_tab .text {
+  overflow: hidden;
+  flex-grow: 1;
+  font-size: 14px;
+  padding-top: 1px;
+}
